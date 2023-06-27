@@ -22,7 +22,6 @@ function Arrow(props) {
 
 export default function ServiceSlider(props) {
     const {data} = props
-    console.log(data)
 
     const [currentSlide, setCurrentSlide] = useState(0)
     const [loaded, setLoaded] = useState(false)
@@ -83,7 +82,7 @@ export default function ServiceSlider(props) {
         },
     })
     return (
-        <div className="flex flex-col lg:flex-row lg:-mr-4 lg:ml-auto lg:w-[90%] 2xl:w-[82.5%] pt-8 md:py-16 mx-2 px-5 lg:px-0 lg:pl-8 justify-end items-center bg-charcoal rounded-[20px]"> 
+        <div className="flex flex-col lg:flex-row lg:-mr-4 lg:ml-auto lg:w-[90%] 2xl:w-[82.5%] pt-8 md:py-16 mx-2 px-5 lg:px-0 lg:pl-8 justify-end items-center bg-charcoal rounded-[20px] drop-shadow-services-box"> 
             <div className="flex flex-col mx-auto px-4 lg:px-0 mb-6 lg:mb-0 sm:text-center lg:text-left ">
                 <h2 className="lg:w-[80%] text-5xl font-one font-semibold text-green xl:leading-tighter xl:text-6xl mb-2 tracking-tight">
                     Our Services

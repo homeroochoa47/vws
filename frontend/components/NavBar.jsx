@@ -23,7 +23,7 @@ export default function NavBar() {
     <header className={`fixed mx-auto mt-5 origin-top ease-in-out bg-charcoal/90 backdrop-blur-md right-0 left-0 flex justify-between pl-2 lg:px-10 xl:px-12 py-1 items-center z-50 w-[75%] rounded-lg`}>
         {/* Logo */}
         <Link href="/home" 
-          className="w-[125px] lg:w-[145px] mr-[15px] 2xl:mr-[18px] rounded-[10px] md:relative transition duration-250 ease-in-out px-4"
+          className="w-[125px] lg:w-[145px] mr-[15px] 2xl:mr-[18px] rounded-[10px] md:relative transition duration-250 ease-in-out hover:scale-[103%] px-4"
           >
             <img className="w-full" src="/vws-logo.png" alt="Logo" />
         </Link>

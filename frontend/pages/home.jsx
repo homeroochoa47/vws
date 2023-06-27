@@ -6,8 +6,10 @@ import Head from 'next/head'
 import { client } from "../client"
 import ServiceSlider from '@/components/ServiceSlider';
 import PortfolioSection from '@/components/PortfolioSection';
+import FaqSection from '@/components/FaqSection';
+import ContactSection from '@/components/ContactSection';
 
-export default function HomePage({ heroData, aboutSectionData, galleryData, reviewData, servicesData, partnerData, offerData, contactData }) {
+export default function HomePage({ heroData, aboutSectionData, projectData, faqData, servicesData, partnerData, offerData, contactData }) {
   
   // Define structured data as a JSON object
   const structuredData = {
@@ -18,7 +20,7 @@ export default function HomePage({ heroData, aboutSectionData, galleryData, revi
   };
 
   return (
-    <div id="main" className='h-auto bg-black-bg'>
+    <div id="main" className='h-auto bg-black-bg overflow-clip'>
         <Head>
             <title>Custom Tesla Wrap Services in California</title>
             <meta name="description" content="Transform your Tesla with our professional wrapping services. Enhance appearance, protect paint. Range of high-quality wraps for Model S, 3, X, Y" />
@@ -49,21 +51,21 @@ export default function HomePage({ heroData, aboutSectionData, galleryData, revi
           <AboutUs data={aboutSectionData}/>
         </section>
 
-        <section id="services-section" className='bg-gradient-to-b from-[#000000] to-[#201F1F] py-10'>
+        <section id="services-section" className='bg-gradient-to-b from-[#000000] via-[#201F1F] to-[#201F1F] py-10'>
           <ServiceSlider data={servicesData[0]}/>
         </section>
 
         <section id="work-section" className='bg-lighter-grey'>
-          <PortfolioSection data={galleryData}/>
+          <PortfolioSection data={projectData}/>
         </section>
 
-        {/* <section id="review-section" className=''>
-          <ReviewSection data={reviewData}/>
-        </section> */}
+        <section id="faq-section" className=''>
+          <FaqSection data={faqData}/>
+        </section>
 
-        {/* <section id="partners-section" className=''>
-          <PartnersSection data={partnerData}/>
-        </section> */}
+        <section id="contact-section" className='bg-light-grey'>
+          <ContactSection data=""/>
+        </section>
 
         {/* <section id="offer-section" className=''>
           <OfferSection data={offerData}/>
@@ -85,8 +87,9 @@ export async function getStaticProps() {
     }
   `);
 
-  // const galleryData = await client.fetch('*[_type == "vehicleList"]');
+  const projectData = await client.fetch('*[_type == "projectList"][0].projectList');
 
+  const faqData = await client.fetch('*[_type == "faqSection"][0]');
 
 
   const heroData = data.heroSection;
@@ -103,8 +106,8 @@ export async function getStaticProps() {
     props: {
       heroData,
       aboutSectionData,
-      // galleryData,
-      // reviewData,
+      projectData,
+      faqData,
       servicesData,
       // partnerData,
       // offerData,

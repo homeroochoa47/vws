@@ -1,53 +1,61 @@
 import {defineField, defineType} from 'sanity'
 
 export default {
-    name: 'vehicle',
-    title: 'Vehicle',
+    name: 'project',
+    title: 'Project',
     type: 'object',
     fields: [
       {
         name: 'title',
-        title: 'Object Title',
+        title: 'Project Title',
         type: 'string',
-        description: 'Brand, wrap type, color, model',
+        description: 'Company, Vehicle Name, Vehicle Type',
       },
+      // {
+      //   name: 'vehicleType',
+      //   title: 'Vehicle Type',
+      //   type: 'string',
+      //   options: {
+      //     list: ['Fleet', 'Box Truck', 'Truck', 'Trailer', 'Bus', 'Van', 'Food Truck'],
+      //   },
+      // },
       {
         name: 'vehicleType',
         title: 'Vehicle Type',
-        type: 'string',
+        type: 'array',
+        of: [{type: 'string'}],
         options: {
-          list: ['Fleet', 'Box Truck', 'Truck', 'Trailer', 'Bus', 'Van', 'Food Truck'],
-        },
+            list: [
+            {title: 'Fleet', value: 'fleet'},
+            {title: 'Box Truck', value: 'boxTruck'},
+            {title: 'Truck', value: 'truck'},
+            {title: 'Trailer', value: 'trailer'},
+            {title: 'Bus', value: 'bus'},
+            {title: 'Van', value: 'van'},
+            {title: 'Food Truck', value: 'foodTruck'},
+            ]
+        }
       },
       {
-        name: 'color',
-        title: 'Color',
+        name: 'companyName',
+        title: 'Company Name',
         type: 'string',
+        description: 'The name of the company that the project was done for',
       },
       {
-        name: 'wrapType',
-        title: 'Wrap Type',
+        name: 'vehicleName',
+        title: 'Vehicle Name',
         type: 'string',
-        options: {
-          list: ['Matte', 'Satin', 'Gloss', 'PPF'],
-        },
-      },
-      {
-        name: 'brand',
-        title: 'Brand',
-        type: 'string',
-        options: {
-          list: ['3M', 'Avery'],
-        },
+        description: 'The name of the vehicle(s). E.g. Ford Transit, Metro Rail, etc.',
       },
       {
         title: 'URL Slug',
         name: 'slug',
         type: 'slug',
-        description: '[type]-[color]-wrap-tesla-[model]',
+        description: '[company]-[vehicle-name]-[vehicle-type]-wrap',
         options: {
           source: 'title',
-          maxLength: 96
+          maxLength: 128
         },
       },
       {
@@ -101,7 +109,6 @@ export default {
           },
         ],
       },
-      
     ],
   };
   

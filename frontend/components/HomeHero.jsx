@@ -20,20 +20,22 @@ export default function HomeHero(props) {
             }
             function nextTimeout() {
               clearTimeout(timeout)
-              if (mouseOver) return
+              // Uncomment to allow for mouseover pause
+              // if (mouseOver) return
               timeout = setTimeout(() => {
                 slider.next()
               }, 1750)
             }
             slider.on("created", () => {
-              slider.container.addEventListener("mouseover", () => {
-                mouseOver = true
-                clearNextTimeout()
-              })
-              slider.container.addEventListener("mouseout", () => {
-                mouseOver = false
-                nextTimeout()
-              })
+              // Uncomment to allow for mouseover pause
+              // slider.container.addEventListener("mouseover", () => {
+              //   mouseOver = true
+              //   clearNextTimeout()
+              // })
+              // slider.container.addEventListener("mouseout", () => {
+              //   mouseOver = false
+              //   nextTimeout()
+              // })
               nextTimeout()
             })
             slider.on("dragStarted", clearNextTimeout)
@@ -73,24 +75,26 @@ export default function HomeHero(props) {
                                 role="button">See Our Work
                             </Link>
                         </div>
+
+                        {/* Hero Image */}
                         <div className="mt-16 md:mt-0 2xl:w-[110%]">
                             <img src={urlFor(data.heroImage).url()}
-                            className="w-[90%] sm:w-[70%] md:w-full mx-auto lg:mx-0 rounded-lg" alt="" />
+                            className="w-[90%] sm:w-[70%] md:w-full mx-auto lg:mx-0 rounded-lg rotate-[-1deg]" alt="" />
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="text-center bg-dark-grey drop-shadow-services-box mt-10 py-12 mx-12 rounded-[50px]">
-                <h2 class="mb-8 text-3xl text-two text-light-grey font-bold">
+            
+            {/* Logo Cloud */}
+            <div className="text-center bg-dark-grey drop-shadow-services-box mt-10 py-12 2xl:py-4 w-[80%] mx-auto rounded-[50px]">
+                <h2 className="mb-8 text-3xl text-two text-light-grey font-bold">
                     Serving small businesses to Fortune 500 companies
                 </h2>
-
-                <div class="flex flex-wrap items-center justify-evenly">
+                <div className="flex flex-wrap items-center justify-evenly">
                   {data.companyLogos.map((item, index) => (
-                    <div class="mb-1 lg:mb-0 w-[18%]">
+                    <div key={index} className="mb-1 lg:mb-0 w-[18%]">
                       <img src={urlFor(item).url()}
-                    class="px-6 dark:brightness-150 md:px-6" alt="Nasa - logo" />
+                    className="px-6 dark:brightness-150 md:px-6 transition duration-250 ease-out hover:scale-105" alt="Client Company logo" />
                     </div>
                   ))}
                 </div>

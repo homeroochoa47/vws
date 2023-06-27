@@ -66,6 +66,9 @@ export default function AboutUs(props) {
                                     </div>
                                 </div>
                             </div>
+                            <Link href="/contact" className="mb-2 inline-block rounded-[15px] bg-dark-grey/60 px-12 py-3 text-lg text-bg-lightest shadow-sm transition duration-150 ease-in-out hover:bg-charcoal hover:shadow-xl md:mr-2 md:mb-0 border-[2px] border-light-grey font-two"
+                                role="button">Get Started
+                            </Link>
                         </div>
                     </div>
                 </div>

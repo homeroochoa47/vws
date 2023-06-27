@@ -3,15 +3,15 @@ import siteSettings from "./documents/siteSettings"
 import review from "./objects/reviewCard"
 import valueCard from "./objects/valueCard"
 import gallery from "./documents/gallery"
-import reviewSection from "./documents/reviewSection"
+import faqSection from "./documents/faqSection"
 import services from "./documents/services"
 import servicePage from "./documents/servicePage"
 import portfolioPage from "./documents/portfolioPage"
 import product from "./objects/product"
 import portfolioProject from "./objects/portfolioProject"
 import contactPage from "./documents/contactPage"
-import vehicleList from "./documents/vehicleList"
-import vehicle from "./objects/vehicle"
+import projectList from "./documents/projectList"
+import project from "./objects/project"
 import service from "./objects/service"
 import partner from "./objects/partner"
 import offerSection from "./documents/offerSection"
@@ -26,10 +26,10 @@ export const schemaTypes = [
     portfolioPage,
     siteSettings,
     gallery,
-    reviewSection,
+    faqSection,
     services,
     contactPage,
-    vehicleList,
+    projectList,
     servicePage,
     offerSection,
     serviceLocations,
@@ -41,7 +41,7 @@ export const schemaTypes = [
     service,
     product,
     portfolioProject,
-    vehicle,
+    project,
     partner,
     location,
     aboutStat,

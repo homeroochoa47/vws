@@ -143,14 +143,14 @@ export default defineConfig({
           S.divider(),
 
           S.listItem()
-          .title("vehicle List")
-          .id("vehicles")
+          .title("Project List")
+          .id("projects")
           .icon(CarProfile)
           .child(
             S.document()
-              .schemaType("vehicleList")
-              .documentId("vehicleList")
-              .title("VehicleList"),
+              .schemaType("projectList")
+              .documentId("projectList")
+              .title("Project List"),
           ),
 
           S.divider(),
@@ -165,14 +165,14 @@ export default defineConfig({
             .items([
 
               S.listItem()
-              .title("Reviews Section")
-              .id("reviewsSection")
+              .title("FAQ Section")
+              .id("faqSection")
               .icon(Megaphone)
               .child(
                 S.document()
-                .schemaType("reviewSection")
-                .documentId("reviewSection")
-                .title("Reviews")
+                .schemaType("faqSection")
+                .documentId("faqSection")
+                .title("FAQs")
               ),
 
               S.listItem()
