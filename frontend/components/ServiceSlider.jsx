@@ -29,19 +29,19 @@ export default function ServiceSlider(props) {
         loop: true,
         initial: 0,
         slides: {
-            perView: 1.25,
+            perView: 1.1,
             spacing: 15,
         },
         breakpoints: {
             '(max-width: 1536px)': {
                 slides: {
-                    perView: 1,
+                    perView: 1.5,
                     spacing: 10,
                 },
             },
             '(max-width: 1280px)': {
                 slides: {
-                    perView: 1.1,
+                    perView: 1.25,
                     spacing: 15,
                 },
             },

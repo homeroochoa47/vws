@@ -87,7 +87,7 @@ export default function HomeHero(props) {
             
             {/* Logo Cloud */}
             <div className="text-center bg-dark-grey drop-shadow-services-box mt-10 py-12 2xl:py-4 w-[80%] mx-auto rounded-[50px]">
-                <h2 className="mb-8 text-3xl text-two text-light-grey font-bold">
+                <h2 className="mb-2 text-3xl text-two text-light-grey font-bold">
                     Serving small businesses to Fortune 500 companies
                 </h2>
                 <div className="flex flex-wrap items-center justify-evenly">

@@ -10,7 +10,7 @@ export default function FaqSection(props) {
         <div className={`bg-[url(/faq-bg.svg)] bg-cover h-auto py-20`}>
 
             {/* If the props contain an image, use the first header */}
-                <div className="px-3 md:px-10 lg:px-0 relative flex items-center h-full text-center lg:pr-12 lg:text-left w-[95%] mx-auto justify-between">
+                <div className="px-3 md:px-10 2xl:px-32 relative flex items-center h-full text-center lg:text-left w-[95%] mx-auto justify-between">
                     <div className="w-full">
                         <div className="grid items-center lg:grid-cols-2">
                             <div className="flex flex-col w-[95%]">

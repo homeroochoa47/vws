@@ -1,15 +1,22 @@
-// import Footer from '@/components/Footer'
 import NavBar from '@/components/NavBar';
 import HomeHero from '@/components/HomeHero'
 import AboutUs from '@/components/AboutUs';
 import Head from 'next/head'
-import { client } from "../client"
 import ServiceSlider from '@/components/ServiceSlider';
 import PortfolioSection from '@/components/PortfolioSection';
 import FaqSection from '@/components/FaqSection';
 import ContactSection from '@/components/ContactSection';
+import Footer from '@/components/Footer';
+
+import { client } from "../client"
 
 export default function HomePage({ heroData, aboutSectionData, projectData, faqData, servicesData, partnerData, offerData, contactData }) {
+
+  // Contains only the service name and slug for each service. This is for the navbar & footer
+  const filteredServices = servicesData[0].services.map(({ serviceName, slug }) => ({
+    serviceName,
+    slug
+  }));
   
   // Define structured data as a JSON object
   const structuredData = {
@@ -40,7 +47,7 @@ export default function HomePage({ heroData, aboutSectionData, projectData, faqD
 
 
         {/* Header */}
-        <NavBar/>
+        <NavBar data={filteredServices}/>
 
       {/* Hero */}
         <section id="hero" className='no-scrollbar'>
@@ -67,13 +74,9 @@ export default function HomePage({ heroData, aboutSectionData, projectData, faqD
           <ContactSection data=""/>
         </section>
 
-        {/* <section id="offer-section" className=''>
-          <OfferSection data={offerData}/>
-        </section> */}
-
-        {/* <section id="footer" className=''>
+        <section id="footer" className=''>
           <Footer contactData={contactData} servicesData={servicesData}/>
-        </section> */}
+        </section>
 
     </div>
   )
@@ -98,7 +101,7 @@ export async function getStaticProps() {
   // const reviewData = await client.fetch('*[_type == "reviewSection"]');
   // const offerData = await client.fetch('*[_type == "offerSection"]');
   const servicesData = await client.fetch('*[_type == "services"]');
-  // const contactData = await client.fetch('*[_type == "siteSettings"]');
+  const contactData = await client.fetch('*[_type == "siteSettings"]');
 
 
 
@@ -109,9 +112,7 @@ export async function getStaticProps() {
       projectData,
       faqData,
       servicesData,
-      // partnerData,
-      // offerData,
-      // contactData
+      contactData
     },
   };
 }
