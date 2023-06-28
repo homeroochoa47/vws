@@ -1,18 +1,23 @@
-import Header from '@/components/Header'
-import ReviewSection from '@/components/sections/ReviewSection'
-import ContactSection from '@/components/sections/ContactSection'
-import ServiceHero from '@/components/ServiceHero'
-import ServiceGallerySection from '@/components/sections/ServiceGallerySection'
 import Footer from '@/components/Footer'
 import Head from 'next/head'
 import { client } from "../../client"
+import NavBar from '@/components/NavBar';
+import HomeHero from '@/components/HomeHero';
+import ServicesHero from '@/components/ServicesHero';
+import ServiceGallerySection from '@/components/ServiceGallerySection';
 
 export default function ServicePage({ servicesDataSlug, contactData, reviewData, serviceGalleryPhotos, servicesData }) {
 
+  // Contains only the service name and slug for each service. This is for the navbar & footer
+  const filteredServices = servicesData[0].services.map(({ serviceName, slug }) => ({
+    serviceName,
+    slug
+  }));
+
   return (
-    <div id="main" className='h-auto bg-black-bg'>
+    <div id="main" className='h-auto bg-light-grey'>
        <Head>
-        <title>{`${servicesDataSlug[0].serviceName} | Professional Tesla Wrapping Services`}</title>
+        {/* <title>{`${servicesDataSlug[0].serviceName} | Professional Tesla Wrapping Services`}</title>
         <meta name="description" content={`Transform your Tesla with our ${servicesDataSlug[0].serviceName} Enhance your Tesla's appearance and protect your paint. Contact us today!`} />
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:type" content="website" />
@@ -22,31 +27,34 @@ export default function ServicePage({ servicesDataSlug, contactData, reviewData,
         <meta property="og:url" content="https://www.teslawrap.com" />
         <meta property="og:image" content="/tesla-wrap-og.jpg" />
         <link rel="icon" type="image/png" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> */}
       </Head>
 
-      {/* Header */}
-      <Header/>
+        {/* Header */}
+        <section  id='navbar' className=''>
+        <NavBar data={filteredServices}/>
+        </section>
 
-        <section id="hero" className=''>
-          <ServiceHero data={servicesDataSlug}/>
+        {/* Hero */}
+        <section id="hero" className='no-scrollbar'>
+            <ServicesHero data={servicesDataSlug[0]}/>
         </section>
 
         <section id="service-gallery-section" className=''>
           <ServiceGallerySection photoData={serviceGalleryPhotos} serviceData={servicesDataSlug}/>
         </section>
 
-        <section id="review-section" className=''>
+        {/* <section id="review-section" className=''>
           <ReviewSection data={reviewData}/>
-        </section>
+        </section> */}
 
-        <section id="contact-section" className=''>
+        {/* <section id="contact-section" className=''>
           <ContactSection data={contactData}/>
-        </section>
+        </section> */}
 
-        <section id="footer" className=''>
+        {/* <section id="footer" className=''>
           <Footer contactData={contactData} servicesData={servicesData}/>
-        </section>
+        </section> */}
 
     </div>
   )
@@ -55,22 +63,27 @@ export default function ServicePage({ servicesDataSlug, contactData, reviewData,
 
 export async function getStaticProps({ params }) {
   //This query provides the services filtered by the wrap type, determined by the slug name
+  console.log(params)
   const servicesDataSlug = await client.fetch(`*[_type == "services"][0].services[slug.current == "${params.serviceSlug}"]`);
-  const filterKeyword = servicesDataSlug[0].linkKeyword
-  const serviceGalleryPhotos = await client.fetch(`*[_type == "carList"][0].carList[wrapType == "${filterKeyword}"]`);
-  const reviewData = await client.fetch('*[_type == "reviewSection"]');
-  const offerData = await client.fetch('*[_type == "offerSection"]');
-  const contactData = await client.fetch('*[_type == "siteSettings"]');
+  console.log(servicesDataSlug)
+
+
+    
+//   const filterKeyword = servicesDataSlug[0].linkKeyword
+//   const serviceGalleryPhotos = await client.fetch(`*[_type == "carList"][0].carList[wrapType == "${filterKeyword}"]`);
+//   const reviewData = await client.fetch('*[_type == "reviewSection"]');
+//   const offerData = await client.fetch('*[_type == "offerSection"]');
+//   const contactData = await client.fetch('*[_type == "siteSettings"]');
   const servicesData = await client.fetch('*[_type == "services"]');
 
   return {
     props: {
       // servicesDataFull,
       servicesDataSlug,
-      contactData,
-      reviewData,
-      serviceGalleryPhotos,
-      offerData,
+    //   contactData,
+    //   reviewData,
+    //   serviceGalleryPhotos,
+    //   offerData,
       servicesData
     },
   };

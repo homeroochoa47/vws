@@ -48,7 +48,7 @@ export default function HomeHero(props) {
     // const bgUrl = urlFor(data.backgroundImage).url()
 
     return (
-        <section className={`bg-[url(/home-bg.svg)] md:bg-cover bg-left md:bg-center py-20`}>
+        <div className={`bg-[url(/home-bg.svg)] md:bg-cover bg-left md:bg-center py-20`}>
             {/* Jumbotron  */}
             <div className="relative flex items-center h-full px-4 md:px-6 lg:py-12 lg:px-12">
                 <div className="w-full mx-auto sm:max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-7xl mt-24">
@@ -99,6 +99,6 @@ export default function HomeHero(props) {
                   ))}
                 </div>
             </div>
-        </section>
+        </div>
     )
 };

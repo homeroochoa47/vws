@@ -35,7 +35,7 @@ export default function ServiceSlider(props) {
         breakpoints: {
             '(max-width: 1536px)': {
                 slides: {
-                    perView: 1.5,
+                    perView: 1.1,
                     spacing: 10,
                 },
             },
@@ -120,7 +120,7 @@ export default function ServiceSlider(props) {
                 </div>
             </div>
 
-            <div className="navigation-wrapper w-full lg:w-[60%] xl:w-1/2">
+            <div className="navigation-wrapper w-full lg:w-[60%]">
                 <div ref={sliderRef} className="keen-slider">
                     {data.services.map((item, index) => {
                     return <ServiceCard props={item} index={index} key={index}/>

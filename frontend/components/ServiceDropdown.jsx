@@ -52,7 +52,7 @@ export default function ServiceDropdown(props) {
           <li>
           <Link
             className="block w-full bg-transparent px-4 py-2 text-lg font-actor font-normal hover:bg-charcoal hover:text-green transition duration-50 ease-out"
-            href={`/services/${item.slug.current}`}
+            href={`/vehicle-wrap-services/${item.slug.current}`}
             onClick={closeDropdown}
           >
             {item.serviceName}
