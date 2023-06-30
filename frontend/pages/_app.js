@@ -1,6 +1,8 @@
 import '@/styles/globals.css'
 import Script from 'next/script'
 import { Maven_Pro, Actor, Nunito_Sans  } from 'next/font/google'
+import { useEffect } from 'react'
+'use client;'
 
 const maven = Maven_Pro({
   subsets: ['latin'],
@@ -23,6 +25,10 @@ const nunito = Nunito_Sans({
 
 
 export default function App({ Component, pageProps }) {
+  useEffect(() => {
+    import('preline')
+  }, [])
+
   return (
     <main className={`${maven.variable} ${actor.variable} ${nunito.variable} font-three`}>
       <Component {...pageProps} />

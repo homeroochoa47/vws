@@ -2,31 +2,21 @@ import { urlFor } from "@/lib/helpers"
 
 export default function ServicesHero(props) {
     const {data} = props
-    console.log(data)
-  return (
-       <div className='flex w-full pt-32 pb-20'>
-        <div className="h-full w-full py-10 bg-[url(/services-bg.svg)] bg-cover bg-center">
-            {/* Jumbotron  */}
-            <div className="relative flex items-center h-full px-4 md:px-6 lg:py-12 lg:px-12">
-                <div className="w-full mx-auto sm:max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-7xl">
-                    <div className="grid items-center gap-10 md:grid-cols-2">
-                        <div className="space-y-2 mx-auto md:mx-0 w-full order-last md:order-first bg-charcoal p-10 rounded-xl">
-                            <h1 className="mt-0 text-5xl font-one text-green font-bold tracking-tight lg:text-6xl xl:text-7xl">
-                                Commercial {data.serviceName}
-                            </h1>
-                            <p className="mb-4 text-lg md:text-xl md:font-light text-light-grey font-two leading-tight">
-                                Elevate Your Tesla's Look: Discover Matte Wraps for Model Y Model 3, Model X, and Model S in Matte Black and More
-                            </p>
-                        </div>
 
-                        {/* Hero Image */}
-                        <div className="mt-16 md:mt-0 2xl:w-[110%]">
-                            <img src={urlFor(data.pageHeroImage).url()}
-                            className="w-[90%] sm:w-[70%] md:w-full mx-auto lg:mx-0 rounded-lg" alt="" />
+    return (
+        <div className='flex w-full pt-32'>
+            <div className="h-full w-full py-20 bg-[url(/services-bg.svg)] bg-cover bg-center">
+                <div class="max-w-[85vw] mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid lg:grid-cols-7 lg:gap-x-8 xl:gap-x-12 lg:items-center">
+                        <div class="lg:col-span-3 bg-charcoal p-6 rounded-xl">
+                            <h1 class="block text-3xl font-bold text-green sm:text-4xl md:text-5xl lg:text-5xl dark:text-white">Commercial {data.serviceName}</h1>
+                            <p class="mt-3 text-lg text-gray-800 dark:text-gray-400">{data.heroCaption}</p>
+                        </div>
+                        <div class="lg:col-span-4 mt-10 lg:mt-0">
+                            <img class="w-full rounded-xl" src={urlFor(data.pageHeroImage).url()} alt="Image Description"/>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
   )

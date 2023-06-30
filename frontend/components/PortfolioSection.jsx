@@ -45,7 +45,7 @@ export default function PortfolioSection(props) {
             </div>
             {/* Learn More Button */}
             <div className='w-full flex justify-center mt-6'>
-                <Link href="/portfolio" className="mb-2 inline-block rounded-[10px] bg-dark-grey/20 px-12 py-3 text-2xl md:font-medium font-three text-dark-grey shadow-sm transition duration-150 ease-in-out hover:bg-green/30 hover:shadow-xl md:mr-2 md:mb-0 border-[3px] border-dark-grey text-center"
+                <Link href="/portfolio" className="mb-2 inline-block rounded-[10px] bg-dark-grey/20 px-12 py-3 text-2xl md:font-medium font-three text-dark-grey shadow-sm transition duration-150 ease-in-out hover:bg-green/30 hover:shadow-xl md:mr-2 md:mb-0 text-center"
                     role="button">View our Full Portfolio
                 </Link>
             </div>
