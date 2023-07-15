@@ -14,12 +14,5 @@ export default defineType({
         hotspot: true,
       }
     }),
-    defineField({
-      name: 'portfolioProjects',
-      title: 'Portfolio Projects',
-      type: 'array',
-      of: [{type: "portfolioProject"}],
-      description: "Products are separated by product categories. Each category has its own slider listing every product in that category."
-    }),
   ]
 });

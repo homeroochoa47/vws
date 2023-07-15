@@ -1,5 +1,7 @@
 import Link from "next/link"
 import { useRouter } from 'next/router';
+import React, { useEffect, useState } from "react";
+
 
 export default function NavBar(props) {
   const {data} = props
@@ -8,13 +10,54 @@ export default function NavBar(props) {
   const router = useRouter();
   const activePath = router.pathname;
 
+  // Set a nav position state that tells the navbar where to be positioned depending on scroll direction
+  const [navPosition, setNavPosition] = useState(null);
+
+  useEffect(() => {
+
+    // last scrolled Y Position on screen, in px
+    let lastScrollY = window.scrollY;
+    const sensitivity = window.innerWidth < 768 ? 25 : .25; // Adjust the 'sensitivity' based on screen size
+
+    const updateNavPosition = () => {
+      // when scroll occurs, set a separate scroll Y value in px
+      const scrollY = window.scrollY;
+      const direction = scrollY > lastScrollY ? "up" : "down";
+
+      // conditional for scroll direction vs nav position
+      if (scrollY < 100) {
+        setNavPosition("down");
+      } else if (
+        (direction !== navPosition) &&
+        (Math.abs(scrollY - lastScrollY) > sensitivity)
+      ) {
+        setNavPosition(direction);
+      }
+      
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+    };
+
+    window.addEventListener("scroll", updateNavPosition);
+    return () => {
+      window.removeEventListener("scroll", updateNavPosition);
+    };
+  }, [navPosition]);
+
+
+
+
+
+
+
   return (
-    <header className="fixed mx-auto right-0 left-0 flex justify-between items-center z-50 md:w-[85%] rounded-xl">
-      <nav className="relative md:max-w-7xl w-full bg-charcoal rounded-xl mx-2 my-6 py-2.5 md:flex md:items-center md:justify-between md:px-6 lg:px-8 xl:mx-auto" aria-label="Global">
+    <header className={`fixed mx-auto right-0 left-0 flex justify-between items-center z-50 md:w-[85%] rounded-xl transition-all duration-300 ${
+      navPosition === "up" ? "-top-32" : "top-0"
+    }`}>
+      <nav className="relative md:max-w-7xl w-full bg-charcoal rounded-xl mx-2 my-2 md:my-4 py-2.5 md:flex md:items-center md:justify-between md:px-6 lg:px-8 xl:mx-auto" aria-label="Global">
         <div className="flex items-center justify-between md:mr-10 mr-4">
 
           {/* Logo */}
-          <Link href="/home" className="w-[125px] lg:w-[150px] rounded-[10px] md:relative transition duration-250 ease-in-out hover:scale-[103%] px-4">
+          <Link href="/" className="w-[125px] lg:w-[150px] rounded-[10px] md:relative transition duration-250 ease-in-out hover:scale-[103%] px-4">
               <img className="w-full" src="/vws-logo.png" alt="Logo" />
           </Link>
 
@@ -36,12 +79,12 @@ export default function NavBar(props) {
           <div className="flex flex-col gap-x-0 md:flex-row md:gap-y-0 mt-2 md:mt-0 rounded-lg md:bg-transparent md:rounded-none">
             
             <div className="flex flex-col md:flex-row mx-auto md:mx-none md:justify-center items-start md:items-center md:mx-auto gap-y-3 md:gap-y-0 w-full">
-              <Link href="/home" className={`mx-auto md:mx-1 text-center text-lg font-semibold px-2 hover:text-red transition duration-150 ease-in-out ${activePath === "/home" ? "underline decoration-2 underline-offset-4 text-green decoration-light-grey pb-[2px]" : "text-light-grey"}`} aria-current="page">
+              <Link href="/" className={`mx-auto md:mx-1 text-center text-lg font-semibold px-2 hover:text-red transition duration-150 ease-in-out ${activePath === "/" ? "text-green" : "text-light-grey"}`} aria-current="page">
                 Home
               </Link> 
 
               <div className="hs-dropdown [--strategy:static] md:[--strategy:fixed] [--adaptive:none] md:[--trigger:click] w-full md:inline-flex md:w-auto">
-                <button id="hs-dropdown-slideup-animation" type="button" className="hs-dropdown-toggle flex items-center mx-auto md:mx-1 text-center text-lg font-semibold px-2 text-light-grey hover:text-green transition-all duration-50 ease-out">
+                <button id="hs-dropdown-slideup-animation" type="button" className="hs-dropdown-toggle flex items-center mx-auto md:mx-1 text-center text-lg font-semibold px-2 text-light-grey hover:text-red transition-all duration-50 ease-out">
                   Services
                   <svg className="hs-dropdown-open:rotate-180 ml-1 w-2.5 h-2.5 text-light-grey" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2 5L8.16086 10.6869C8.35239 10.8637 8.64761 10.8637 8.83914 10.6869L15 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"></path>
@@ -52,26 +95,26 @@ export default function NavBar(props) {
                 bg-dark-grey w-full md:w-72  hidden z-10 md:rounded-lg border-none bg-clip-padding text-left md:shadow-lg px-8 md:px-4 divide-y-2 divide-lighter-grey" aria-labelledby="hs-dropdown-slideup-animation">
 
                 {data.map((item, index) => (
-                  <Link key={index} className="block w-full bg-transparent text-center md:text-left md:pl-6 md:px-4 py-2 text-lg text-lighter-grey font-normal transition duration-50 ease-out  hover:text-green" href={`/vehicle-wrap-services/${item.slug.current}`}>
+                  <Link key={index} className="block w-full bg-transparent text-center md:text-left md:pl-6 md:px-4 py-5 text-lg text-lighter-grey font-normal transition duration-50 ease-out  hover:text-green" href={`/vehicle-wrap-services/${item.slug.current}`}>
                     {item.serviceName}
                   </Link>
                 ))}
                 </div>
               </div>
 
-              <Link href="/portfolio" className={`text-light-grey mx-auto md:mx-1 text-center text-lg font-semibold px-2  hover:text-red transition duration-150 ease-in-out ${activePath === "/about" ? "underline decoration-2 underline-offset-4 text-green decoration-light-grey pb-[2px]" : ""}`}>
+              <Link href="/vehicle-wrap-portfolio" className={`mx-auto md:mx-1 text-center text-lg font-semibold px-2  hover:text-red transition duration-150 ease-in-out ${activePath === "/vehicle-wrap-portfolio" ? "text-green" : "text-light-grey"}`}>
                 Portfolio
               </Link>
-              <Link href="/locations" className={`text-light-grey mx-auto md:mx-1 text-center text-lg font-semibold px-2  hover:text-red transition duration-150 ease-in-out ${activePath === "/about" ? "underline decoration-2 underline-offset-4 text-green decoration-light-grey pb-[2px]" : ""}`}>
+              <Link href="/vehicle-wrap-service-locations" className={`mx-auto md:mx-1 text-center text-lg font-semibold px-2  hover:text-red transition duration-150 ease-in-out ${activePath === "/vehicle-wrap-service-locations" ? "text-green" : "text-light-grey"}`}>
                 Locations
               </Link>
-              <Link href="/contact" className={`text-light-grey mx-auto md:mx-1 text-center text-lg font-semibold px-2  hover:text-red transition duration-150 ease-in-out ${activePath === "/contact" ? "underline decoration-2 underline-offset-4 text-green decoration-light-grey pb-[2px]" : ""}`}>
+              <Link href="/contact" className={`mx-auto md:mx-1 text-center text-lg font-semibold px-2  hover:text-red transition duration-150 ease-in-out ${activePath === "/contact" ? "text-green" : "text-light-grey"}`}>
                 Contact
               </Link>
             </div>
           </div>
         </div>
-        <Link href="/contact" className="text-three text-lighter-grey mb-2 hidden xl:inline-block rounded-[25px] bg-green/10 px-10 py-3 text-md xl:text-md font-semibold text-off-white shadow-sm transition duration-150 ease-in-out hover:shadow-xl md:mr-2 md:mb-0 hover:bg-green hover:text-white border-green border-2 whitespace-nowrap" role="button">
+        <Link href="/contact" className="text-three text-lighter-grey mb-2 hidden xl:inline-block rounded-[25px] bg-green/10 px-10 pt-2.5 pb-2 text-md xl:text-md font-semibold shadow-sm transition duration-150 ease-in-out hover:shadow-xl md:mr-2 md:mb-0 hover:bg-green hover:text-white border-green border-2 whitespace-nowrap" role="button">
           Get a Quote
         </Link>
 

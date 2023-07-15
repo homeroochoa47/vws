@@ -95,13 +95,13 @@ export default {
                     name: 'alt',
                     title: 'Alt Text',
                     type: 'string',
-                    description: 'Tesla [model] wrapped in [color] [style] [brand] wrap'
+                    description: '[company] [vehicle-name] [vehicle-type] wrap'
                   },
                   {
                     name: 'caption',
                     title: 'Image Caption',
                     type: 'string',
-                    description: 'Tesla [model] [style] [color] wrap'
+                    description: '[company] [vehicle-name] [vehicle-type] wrap'
                   },
                 ],
               },

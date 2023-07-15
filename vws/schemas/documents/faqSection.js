@@ -5,6 +5,14 @@ export default defineType({
     title: 'FAQ Section',
     type: 'document',
     fields: [
+      defineField({
+        name: 'heroImage',
+        title: 'Hero Image',
+        type: 'image',
+        options: {
+          hotspot: true,
+        },
+      }),
         defineField({
             name: 'faqSectionImage',
             title: 'FAQ Section Image',

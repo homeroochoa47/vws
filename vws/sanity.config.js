@@ -174,17 +174,6 @@ export default defineConfig({
                 .documentId("faqSection")
                 .title("FAQs")
               ),
-
-              S.listItem()
-              .title("Offer Section")
-              .id("offerSection")
-              .icon(Megaphone)
-              .child(
-                S.document()
-                .schemaType("offerSection")
-                .documentId("offerSection")
-                .title("Offer Section")
-              )
             ])
           ),
 

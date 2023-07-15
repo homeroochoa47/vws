@@ -8,13 +8,11 @@ import services from "./documents/services"
 import servicePage from "./documents/servicePage"
 import portfolioPage from "./documents/portfolioPage"
 import product from "./objects/product"
-import portfolioProject from "./objects/portfolioProject"
 import contactPage from "./documents/contactPage"
 import projectList from "./documents/projectList"
 import project from "./objects/project"
 import service from "./objects/service"
 import partner from "./objects/partner"
-import offerSection from "./documents/offerSection"
 import serviceLocations from "./documents/serviceLocations"
 import location from "./objects/location"
 import locationPageStatic from "./documents/locationPageStatic"
@@ -31,7 +29,6 @@ export const schemaTypes = [
     contactPage,
     projectList,
     servicePage,
-    offerSection,
     serviceLocations,
     locationPageStatic,
 
@@ -40,7 +37,6 @@ export const schemaTypes = [
     valueCard,
     service,
     product,
-    portfolioProject,
     project,
     partner,
     location,
