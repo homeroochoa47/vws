@@ -73,7 +73,7 @@ export default function HomeHero({ data }) {
                             <p className="mb-4 w-[80%] md:w-full lg:w-[80%] text-lg md:text-xl md:font-light text-lighter-grey font-two leading-tight">
                               {data.followingCaption}
                             </p>
-                            <Link href="/contact" className="mb-2 inline-block rounded-[20px] px-8 py-1.5 md:px-12 md:py-3 md:text-lg bg-green/10 text-lighter-grey pt-2.5 pb-2 text-md xl:text-md font-semibold shadow-sm transition duration-150 ease-in-out hover:shadow-xl md:mr-2 md:mb-0 hover:bg-green/70 hover:text-white border-green border-2"
+                            <Link href="#contact-section" className="mb-2 inline-block rounded-[20px] px-8 py-1.5 md:px-12 md:py-3 md:text-lg bg-green/10 text-lighter-grey pt-2.5 pb-2 text-md xl:text-md font-semibold shadow-sm transition duration-150 ease-in-out hover:shadow-xl md:mr-2 md:mb-0 hover:bg-green/70 hover:text-white border-green border-2"
                                 role="button">Get Started
                             </Link>
                             <Link href="/vehicle-wrap-portfolio" className="mb-2 inline-block rounded-[20px] px-8 py-1.5 md:px-12 md:py-3 md:text-lg text-lighter-grey bg-green/10 pt-2.5 pb-2 text-md xl:text-md font-semibold shadow-sm transition duration-150 ease-in-out hover:shadow-xl md:mr-2 md:mb-0 hover:bg-green/70 hover:text-white border-green border-2"

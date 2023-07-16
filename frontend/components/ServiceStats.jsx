@@ -10,7 +10,7 @@ export default function ServiceStats() {
         <p className="mt-2 md:mt-4 text-dark-grey">
         Discover the perks of wrapping your vehicles, and take your brand visibility to new heights. Let your vehicles become mobile billboards that captivate attention, generate leads, and leave a lasting impression on potential customers. Explore the advantages of our custom vehicle wraps below:
         </p>
-        <Link href="/contact" className="mt-2 inline-block rounded-[20px] px-8 md:px-12 md:text-lg bg-charcoal/60 text-lighter-grey py-1.5 md:pt-2.5  md:pb-2 text-md xl:text-md font-medium shadow-sm transition duration-150 ease-in-out hover:shadow-xl hover:bg-green/70 hover:text-white border-green border-2"
+        <Link href="#contact-section" className="mt-2 inline-block rounded-[20px] px-8 md:px-12 md:text-lg bg-charcoal/60 text-lighter-grey py-1.5 md:pt-2.5  md:pb-2 text-md xl:text-md font-medium shadow-sm transition duration-150 ease-in-out hover:shadow-xl hover:bg-green/70 hover:text-white border-green border-2"
             role="button">Get Started
         </Link>
         </div>

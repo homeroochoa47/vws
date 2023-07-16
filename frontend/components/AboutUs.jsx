@@ -66,7 +66,7 @@ export default function AboutUs(props) {
                                     </div>
                                 </div>
                             </div>
-                            <Link href="/contact" className="text-center rounded-[20px] px-8 md:px-12 md:text-lg bg-charcoal/60 text-lighter-grey pt-2.5 pb-2 text-md xl:text-md font-semibold shadow-sm transition duration-150 ease-in-out hover:shadow-xl hover:bg-green/70 hover:text-white border-green border-2"
+                            <Link href="#contact-section" className="text-center rounded-[20px] px-8 md:px-12 md:text-lg bg-charcoal/60 text-lighter-grey pt-2.5 pb-2 text-md xl:text-md font-semibold shadow-sm transition duration-150 ease-in-out hover:shadow-xl hover:bg-green/70 hover:text-white border-green border-2"
                                 role="button">Get Started
                             </Link>
                         </div>

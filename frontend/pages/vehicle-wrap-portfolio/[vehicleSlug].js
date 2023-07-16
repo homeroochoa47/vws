@@ -19,17 +19,18 @@ export default function PortfolioPage({ projectPhotos, contactData, faqData, ser
   return (
     <div id="main" className='h-auto bg-light-grey'>
       <Head>
-          {/* <title>{`${servicesDataSlug[0].serviceName} | Professional Tesla Wrapping Services`}</title>
-          <meta name="description" content={`Transform your Tesla with our ${servicesDataSlug[0].serviceName} Enhance your Tesla's appearance and protect your paint. Contact us today!`} />
-          <link rel="icon" href="/favicon.ico" />
-          <meta property="og:type" content="website" />
-          <meta name="og:title" property="og:title" content={`${servicesDataSlug[0].serviceName} | Professional Tesla Wrapping Services`} />
-          <meta name="og:description" property="og:description" content={`${servicesDataSlug[0].serviceName} | Professional Tesla Wrapping Services`} />
-          <meta property="og:site_name" content="TeslaWrap" />
-          <meta property="og:url" content="https://www.teslawrap.com" />
-          <meta property="og:image" content="/tesla-wrap-og.jpg" />
-          <link rel="icon" type="image/png" href="/favicon.ico" />
-          <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> */}
+        <title>{`${projectPhotos[0].title} | Commercial Vehicle Wrapping Services`}</title>
+        <meta name="description" content={`${projectPhotos[0].title} | Transform your vehicles into mobile billboards with our professional vehicle wrap service.`} />
+        <meta name="keywords" content="commercial vehicle wraps, fleet vehicle wraps, van wraps, truck wraps, vehicle wrap service, custom vehicle graphics, mobile advertising"></meta>
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:type" content="website" />
+        <meta name="og:title" property="og:title" content={`${projectPhotos[0].title} | Commercial Vehicle Wrapping Services`} />
+        <meta name="og:description" property="og:description" content={`${projectPhotos[0].title} | Transform your vehicles into mobile billboards with our professional vehicle wrap service.`} />
+        <meta property="og:site_name" content="VehicleWrapService.com" />
+        <meta property="og:url" content="https://www.vehiclewrapservice.com" />
+        <meta property="og:image" content="/vws-og.png" />
+        <link rel="icon" type="image/png" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </Head>
 
       <Layout services={filteredServices} contact={contactData}>

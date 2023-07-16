@@ -9,7 +9,7 @@ export default function DynamicLocationHero({ data }) {
             <h1 className="text-2xl md:text-3xl font-one text-charcoal font-bold tracking-tight lg:text-4xl xl:text-5xl">Vehicle Wrap Services in <span className='text-green'>{data.locationName}, CA</span></h1>
              <p class="my-2 text-sm sm:text-md xl:text-lg md:font-light text-charcoal font-two">{data.locationCaption}</p>
     
-            <Link href="/contact" className="mb-2 inline-block rounded-[20px] bg-charcoal/60 px-8 py-1.5 md:px-12 md:py-2 text-sm lg:text-md xl:text-lg text-white shadow-sm transition duration-150 ease-in-out hover:bg-charcoal hover:shadow-xl md:mb-0 border-[1px] border-white font-two"
+            <Link href="#contact-section" className="mb-2 inline-block rounded-[20px] bg-charcoal/60 px-8 py-1.5 md:px-12 md:py-2 text-sm lg:text-md xl:text-lg text-white shadow-sm transition duration-150 ease-in-out hover:bg-charcoal hover:shadow-xl md:mb-0 border-[1px] border-white font-two"
                 role="button">Get Started
             </Link>
     

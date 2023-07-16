@@ -13,15 +13,15 @@ export default function Error({ contactData, servicesData }) {
   return (
     <div id="main" className='h-auto bg-charcoal'>
       <Head>
-        <title>Custom Tesla Wrap Services in California</title>
-        <meta name="description" content="Transform your Tesla with our professional wrapping services. Enhance appearance, protect paint. Range of high-quality wraps for Model S, 3, X, Y" />
+        <title>Page not found. | Commercial Vehicle Wrapping Services</title>
+        <meta name="description" content="Looks like we weren't able to find the page you're looking for." />
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:type" content="website" />
-        <meta name="og:title" property="og:title" content="Custom Tesla Wraps in Southern California" />
-        <meta name="og:description" property="og:description" content="Transform your Tesla with our professional wrapping services. Enhance appearance, protect paint. Range of high-quality wraps for Model S, 3, X, Y" />
-        <meta property="og:site_name" content="Tesla Wrap" />
-        <meta property="og:url" content="https://www.teslawrap.com" />
-        <meta property="og:image" content="/tesla-wrap-og.jpg" />
+        <meta name="og:title" property="og:title" content="Page not found. | Commercial Vehicle Wrapping Services" />
+        <meta name="og:description" property="og:description" content="Looks like we weren't able to find the page you're looking for." />
+        <meta property="og:site_name" content="VehicleWrapService.com" />
+        <meta property="og:url" content="https://www.vehiclewrapservice.com" />
+        <meta property="og:image" content="/vws-og.png" />
         <link rel="icon" type="image/png" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 

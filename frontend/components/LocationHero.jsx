@@ -17,7 +17,7 @@ export default function LocationHero({ data }) {
                 <p class="text-md lg:text-lg xl:text-xl text-lighter-grey">
                     We offer our services throughout Southern California, and with our convenient concierge service, we'll pick up and drop off your vehicles at the location of your choice. Reach out for a quote to find out more!
                 </p>
-                <Link href="/contact" className="w-54 mt-2 inline-block rounded-[20px] bg-green/30 px-8 py-1.5 md:px-12 md:py-3 md:text-lg text-lighter-grey shadow-sm transition duration-150 ease-in-out hover:bg-charcoal hover:shadow-xl border-[1px] border-lighter-grey font-two"
+                <Link href="#contact-section" className="w-54 mt-2 inline-block rounded-[20px] bg-green/30 px-8 py-1.5 md:px-12 md:py-3 md:text-lg text-lighter-grey shadow-sm transition duration-150 ease-in-out hover:bg-charcoal hover:shadow-xl border-[1px] border-lighter-grey font-two"
                     role="button">Get Started
                 </Link>
             </div>

@@ -130,7 +130,7 @@ export default function CarSlider({ data }) {
       </div>
       
       <div className="flex relative md:px-1 space-x-3 lg:space-x-12 mt-4">
-          <Link href="/contact" className="mb-2 inline-block rounded-[20px] bg-green/80 px-8 py-1.5 md:px-12 md:py-3 md:text-2xl text-charcoal shadow-sm transition duration-150 ease-in-out hover:bg-green hover:shadow-xl md:mr-2 md:mb-0 border-[1px] border-lighter-grey font-two mr-3"
+          <Link href="#contact-section" className="mb-2 inline-block rounded-[20px] bg-green/80 px-8 py-1.5 md:px-12 md:py-3 md:text-2xl text-charcoal shadow-sm transition duration-150 ease-in-out hover:bg-green hover:shadow-xl md:mr-2 md:mb-0 border-[1px] border-lighter-grey font-two mr-3"
             role="button">Get Started
             </Link>
         </div>

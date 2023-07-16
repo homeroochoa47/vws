@@ -104,7 +104,7 @@ function ContactSection({ data }) {
                     <img className="w-full" src={urlFor(data[0].logo).url()} alt="Logo" />
                 </Link>
 
-                <a href="tel:2133221132" name="call-now-button" className="flex w-full ml-auto justify-center mt-3 lg:mt-auto font-one font-semibold rounded-full text-3xl lg:text-4xl py-3 lg:py-6  hover:bg-green/70 text-center mb-2 md:px-12 md:py-3 md:text-lg bg-charcoal/60 text-lighter-grey pt-2.5 pb-2 text-md xl:text-md shadow-sm transition duration-150 ease-in-out hover:shadow-xl md:mr-2 md:mb-0 border-green border-2">Call Now</a>
+                <a href="tel:" name="call-now-button" className="flex w-full ml-auto justify-center mt-3 lg:mt-auto font-one font-semibold rounded-full text-3xl lg:text-4xl py-3 lg:py-6  hover:bg-green/70 text-center mb-2 md:px-12 md:py-3 md:text-lg bg-charcoal/60 text-lighter-grey pt-2.5 pb-2 text-md xl:text-md shadow-sm transition duration-150 ease-in-out hover:shadow-xl md:mr-2 md:mb-0 border-green border-2">Call Now</a>
 
             </div>
             
