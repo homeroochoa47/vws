@@ -47,10 +47,10 @@ export default function Footer({contactData, servicesData }) {
                             <Link href="/">Home</Link>
                         </li>
                         <li className="mb-4 underline">
-                            <Link href="/tesla-wrap-locations">Locations</Link>
+                            <Link href="/vehicle-wrap-service-locations">Locations</Link>
                         </li>
                         <li className="mb-4 underline">
-                            <Link href="/tesla-wrap-gallery">Portfolio</Link>
+                            <Link href="/vehicle-wrap-portfolio">Portfolio</Link>
                         </li>
                         <li className="mb-4 underline">
                             <Link href="/contact">Contact</Link>
