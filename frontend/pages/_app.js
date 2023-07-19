@@ -22,8 +22,6 @@ const nunito = Nunito_Sans({
   weight: ['300','400','500','700', '800','900']
 })
 
-
-
 export default function App({ Component, pageProps }) {
   useEffect(() => {
     import('preline')
@@ -31,6 +29,15 @@ export default function App({ Component, pageProps }) {
 
   return (
     <main className={`${maven.variable} ${actor.variable} ${nunito.variable} font-three`}>
+      <Script strategy='afterInteractive' src="https://www.googletagmanager.com/gtag/js?id=G-M2PT4P23L0"/>
+      <Script id="google-analytics" strategy='afterInteractive'>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-M2PT4P23L0');
+          `}
+      </Script>
       <Component {...pageProps} />
     </main>
   )
