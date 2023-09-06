@@ -1,6 +1,7 @@
 # VWS | VehicleWrapService.com
 
-<img width="600" alt="Screenshot 2023-09-05 at 5 45 46 PM" src="https://github.com/homeroochoa47/vws/assets/104741653/bc8966e1-f5c6-4442-b1bb-9bb7c56b0117">
+<img width="600" alt="Screenshot 2023-09-05 at 10 21 11 PM" src="https://github.com/homeroochoa47/vws/assets/104741653/2abe349b-7028-4e4f-874a-2c5373bf568d">
+
 
 Vehicle Wrap service is a headless Next.js website for a vehicle wrapping business. It's paired with Sanity CMS on the backend to allow for easy content editing when needed.
 
